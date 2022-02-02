@@ -1,8 +1,11 @@
 #!/bin/bash
-
 set -e
 set -x
 
-DIR=`dirname $0`
-ln -sf `realpath $DIR/emacs/.emacs` ~/.emacs
-ln -sf `realpath $DIR/tmux/.tmux.conf` ~/.tmux.conf
+function abs_path() {
+    echo $0 | python3 -c 'import sys; import os;print(os.path.abspath(os.path.dirname(sys.stdin.read())))'
+}
+
+DIR=`abs_path`
+ln -sf $DIR/emacs/.emacs ~/.emacs
+ln -sf $DIR/tmux/.tmux.conf ~/.tmux.conf

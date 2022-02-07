@@ -1,4 +1,7 @@
-
+(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+			 ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
+			 ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
+			 ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")))
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -43,8 +46,6 @@
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

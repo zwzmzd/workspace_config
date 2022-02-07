@@ -8,6 +8,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(load-theme 'zenburn t)
+;;(load-theme 'solarized-light t)
+;;(load-theme 'solarized-dark t)
 (menu-bar-mode -1)
 
 (setq locale-coding-system'utf-8)
@@ -54,13 +57,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages '(magit)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(magit-item-highlight ((t (:inherit nil))))
- '(region ((t (:background "blue" :foreground "white")))))
-(defun disable-magit-highlight-in-buffer ()
-  (face-remap-add-relative 'magit-item-highlight '()))
-(add-hook 'magit-status-mode-hook 'disable-magit-highlight-in-buffer)

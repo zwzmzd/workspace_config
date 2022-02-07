@@ -30,6 +30,8 @@
 
 (global-set-key (kbd "M-i") 'find-file-at-point)
 
+(show-paren-mode t)
+(setq show-paren-style 'parentheses)
 
 ;;compilation settings
 (defun my-compile()

@@ -7,5 +7,8 @@ function abs_path() {
 }
 
 DIR=`abs_path`
+ESHELL_PROFILE=~/.emacs.d/eshell/profile
 ln -sf $DIR/emacs/.emacs ~/.emacs
+mkdir -p `dirname $ESHELL_PROFILE`
+ln -sf $DIR/emacs/eshell_profile $ESHELL_PROFILE
 ln -sf $DIR/tmux/.tmux.conf ~/.tmux.conf

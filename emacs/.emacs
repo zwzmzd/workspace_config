@@ -8,10 +8,17 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; install dependencies
+(mapc
+ (lambda (package)
+   (or (package-installed-p package)
+       (package-install package)))
+ '(zenburn-theme magit clang-format google-c-style))
+
 (load-theme 'zenburn t)
-;;(load-theme 'solarized-light t)
-;;(load-theme 'solarized-dark t)
 (menu-bar-mode -1)
+
+(add-hook 'c-mode-common-hook 'google-set-c-style)
 
 (setq locale-coding-system'utf-8)
 (setq grep-command "grep --exclude=\"*\\.svn*\" -nHi -e ")
@@ -88,3 +95,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages '(magit)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

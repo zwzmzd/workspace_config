@@ -19,6 +19,10 @@
 (menu-bar-mode -1)
 
 (add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-to-list 'auto-mode-alist '("\\.bazel\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.bzl\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("BUILD\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("WORKSPACE\\'" . python-mode))
 
 (setq locale-coding-system'utf-8)
 (setq grep-command "grep --exclude=\"*\\.svn*\" -nHi -e ")

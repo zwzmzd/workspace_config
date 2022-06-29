@@ -12,3 +12,4 @@ ln -sf $DIR/emacs/.emacs ~/.emacs
 mkdir -p `dirname $ESHELL_PROFILE`
 ln -sf $DIR/emacs/eshell_profile $ESHELL_PROFILE
 ln -sf $DIR/tmux/.tmux.conf ~/.tmux.conf
+ln -sf $DIR/clang-format/.clang-format ~/.clang-format

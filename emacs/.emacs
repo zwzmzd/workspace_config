@@ -94,13 +94,19 @@
   (c-set-offset 'substatement-open 0))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
+(defun c++-mode-clang-format-keys ()
+  "Modify keymaps used by `irony-mode'."
+  (local-set-key [tab] 'clang-format-region)
+  (local-set-key (kbd "TAB") 'clang-format-region))
+(add-hook 'c++-mode-hook 'c++-mode-clang-format-keys)
+
 (require 'package)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(magit)))
+ '(package-selected-packages (quote (magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

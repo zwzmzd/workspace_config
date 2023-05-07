@@ -1,1 +1,2 @@
 export TERM="ansi"
+alias git="git --no-pager"

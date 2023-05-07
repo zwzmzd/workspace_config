@@ -20,6 +20,7 @@
 (menu-bar-mode -1)
 
 (add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-to-list 'auto-mode-alist '("\\.bazel\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.bzl\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("BUILD\\'" . python-mode))

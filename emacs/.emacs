@@ -106,10 +106,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(magit)))
+ '(package-selected-packages (quote (magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+; workaround for magit 20240112 version
+(unless (fboundp 'seq-keep)
+  (defun seq-keep (function sequence)
+    "Apply FUNCTION to SEQUENCE and return the list of all the non-nil results."
+    (delq nil (seq-map function sequence))))

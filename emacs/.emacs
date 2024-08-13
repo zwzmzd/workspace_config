@@ -101,6 +101,7 @@
 (add-hook 'c++-mode-hook 'clang-format-keys)
 (add-hook 'c-mode-hook 'clang-format-keys)
 (add-hook 'java-mode-hook 'clang-format-keys)
+(add-hook 'python-mode-hook 'clang-format-keys)
 
 (require 'package)
 (custom-set-variables

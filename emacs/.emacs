@@ -94,11 +94,13 @@
   (c-set-offset 'substatement-open 0))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
-(defun c++-mode-clang-format-keys ()
+(defun clang-format-keys ()
   "Modify keymaps used by `irony-mode'."
   (local-set-key [tab] 'clang-format-region)
   (local-set-key (kbd "TAB") 'clang-format-region))
-(add-hook 'c++-mode-hook 'c++-mode-clang-format-keys)
+(add-hook 'c++-mode-hook 'clang-format-keys)
+(add-hook 'c-mode-hook 'clang-format-keys)
+(add-hook 'java-mode-hook 'clang-format-keys)
 
 (require 'package)
 (custom-set-variables

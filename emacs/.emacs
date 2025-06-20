@@ -22,7 +22,7 @@
  (lambda (package)
    (or (package-installed-p package)
        (package-install package)))
- '(zenburn-theme magit clang-format google-c-style))
+ '(zenburn-theme magit clang-format google-c-style rust-mode))
 
 (load-theme 'zenburn t)
 (menu-bar-mode -1)
@@ -110,6 +110,7 @@
 (add-hook 'c-mode-hook 'clang-format-keys)
 (add-hook 'java-mode-hook 'clang-format-keys)
 (add-hook 'python-mode-hook 'clang-format-keys)
+(add-hook 'rust-mode-hook 'clang-format-keys)
 
 (require 'package)
 (custom-set-variables
@@ -117,7 +118,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(magit)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

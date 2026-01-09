@@ -26,6 +26,7 @@
 
 (load-theme 'zenburn t)
 (menu-bar-mode -1)
+(which-function-mode 1)
 
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

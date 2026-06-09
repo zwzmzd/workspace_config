@@ -47,7 +47,17 @@
 			       nil
 			       nil
 			       'grep-cpp-history)))
-         (grep command-args))
+  (grep command-args))
+(setq rg-command
+      "rg --vimgrep -g '*.{py,cpp,h,c,cc,hpp}' -g '!*test*' -i ")
+(defun rgs (command-args)
+  (interactive
+   (list (read-from-minibuffer "Run rg: "
+                               rg-command
+                               nil
+                               nil
+                               'rg-history)))
+  (grep command-args))
 
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)

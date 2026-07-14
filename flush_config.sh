@@ -2,11 +2,7 @@
 set -e
 set -x
 
-function abs_path() {
-    echo $0 | python3 -c 'import sys; import os;print(os.path.abspath(os.path.dirname(sys.stdin.read())))'
-}
-
-DIR=`abs_path`
+DIR="$(CDPATH= cd "$(dirname "$0")" && pwd -P)"
 ESHELL_PROFILE="$HOME/.emacs.d/eshell/profile"
 GIT_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/git"
 ln -sf "$DIR/emacs/.emacs" "$HOME/.emacs"

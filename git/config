@@ -1,0 +1,2 @@
+[diff "python"]
+	xfuncname = ^[[:space:]]*(class[[:space:]].*|def[[:space:]].*|async[[:space:]]+def[[:space:]].*)$
